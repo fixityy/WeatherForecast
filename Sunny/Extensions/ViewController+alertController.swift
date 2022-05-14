@@ -10,6 +10,7 @@ import UIKit
 
 extension ViewController {
     
+    //Creating alert with two buttons
     func presentSearchAlertController(withTitle title: String?, message: String?,
                                       style: UIAlertController.Style,
                                       completionHandler: @ escaping (String)->()) {
