@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Sunny
 //
-//  Created by Ivan Akulov on 24/02/2020.
-//  Copyright © 2020 Ivan Akulov. All rights reserved.
+//  Created by Roman Belov on 11.05.2022.
+//  Copyright © 2022 Roman Belov. All rights reserved.
 //
 
 import UIKit

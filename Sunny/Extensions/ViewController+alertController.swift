@@ -2,8 +2,8 @@
 //  ViewController+alertController.swift
 //  Sunny
 //
-//  Created by Ivan Akulov on 25/02/2020.
-//  Copyright © 2020 Ivan Akulov. All rights reserved.
+//  Created by Roman Belov on 11.05.2022.
+//  Copyright © 2022 Roman Belov. All rights reserved.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ extension ViewController {
     
     func presentSearchAlertController(withTitle title: String?, message: String?,
                                       style: UIAlertController.Style,
-                                      complitionHeandler: @ escaping (String)->()) {
+                                      completionHandler: @ escaping (String)->()) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: style)
         ac.addTextField { tf in
             let cities = ["San Francisco", "Moscow", "New York", "Stambul", "Viena"]
@@ -23,7 +23,7 @@ extension ViewController {
             guard let cityName = textField?.text else { return }
             if cityName != "" {
                 let city = cityName.split(separator: " ").joined(separator: "%20")
-                complitionHeandler(city)
+                completionHandler(city)
             }
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

@@ -3,7 +3,7 @@
 //  Sunny
 //
 //  Created by Roman Belov on 11.05.2022.
-//  Copyright © 2022 Ivan Akulov. All rights reserved.
+//  Copyright © 2022 Roman Belov. All rights reserved.
 //
 
 import Foundation
@@ -12,6 +12,7 @@ struct CurrentWeatherData: Codable {
     let weather: [Weather]
     let main: Main
     let name: String
+    let wind: Wind
 }
 
 
@@ -27,4 +28,9 @@ struct Main: Codable {
             case temp
             case feelsLike = "feels_like"
     }
+}
+
+struct Wind: Codable {
+    let speed: Double
+    let deg: Int
 }

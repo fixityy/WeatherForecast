@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Sunny
 //
-//  Created by Ivan Akulov on 24/02/2020.
-//  Copyright © 2020 Ivan Akulov. All rights reserved.
+//  Created by Roman Belov on 11.05.2022.
+//  Copyright © 2022 Roman Belov. All rights reserved.
 //
 
 import UIKit
@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelsLikeTemperatureLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
     
     var networkWeatherManager = NetworkWeatherManager()
     
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
             self.temperatureLabel.text = weather.temperatureString
             self.feelsLikeTemperatureLabel.text = weather.feelsLikeTemperatureString
             self.weatherIconImageView.image = UIImage(systemName: weather.conditionIconString)
+            self.windLabel.text = weather.windSpeedString + " m/s " + weather.windDirectionString
         }
     }
 }

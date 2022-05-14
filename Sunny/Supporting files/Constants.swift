@@ -3,7 +3,7 @@
 //  Sunny
 //
 //  Created by Roman Belov on 11.05.2022.
-//  Copyright © 2022 Ivan Akulov. All rights reserved.
+//  Copyright © 2022 Roman Belov. All rights reserved.
 //
 
 import Foundation
