@@ -3,7 +3,6 @@
 //  Sunny
 //
 //  Created by Roman Belov on 11.05.2022.
-//  Copyright © 2022 Roman Belov. All rights reserved.
 //
 
 import Foundation
@@ -32,7 +31,7 @@ class NetworkWeatherManager {
     fileprivate func performRequest(withURLString urlString: String) {
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: url) { data, response, error in
+        session.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("DataTask error: " + error.localizedDescription)
             } else if let weatherData = data {
@@ -43,8 +42,7 @@ class NetworkWeatherManager {
                     self.onCompletion?(currentWeather)
                 }
             }
-        }
-        task.resume()
+        }.resume()
     }
     
     fileprivate func jsonParcer(withData data: Data)->CurrentWeather? {

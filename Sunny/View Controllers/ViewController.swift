@@ -3,7 +3,6 @@
 //  Sunny
 //
 //  Created by Roman Belov on 11.05.2022.
-//  Copyright © 2022 Roman Belov. All rights reserved.
 //
 
 import UIKit
@@ -19,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var windLabel: UILabel!
     
     var networkWeatherManager = NetworkWeatherManager()
+    
     lazy var locationManager: CLLocationManager = {
         let lm = CLLocationManager()
         lm.delegate = self
@@ -63,6 +63,7 @@ class ViewController: UIViewController {
 
 
 extension ViewController: CLLocationManagerDelegate {
+    //Получаем данные о погоде, после обновления геолокации.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         let latitude = location.coordinate.latitude
